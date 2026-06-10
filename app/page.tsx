@@ -8,7 +8,7 @@ export default function Home() {
           <div className="space-y-6">
             <p className="text-sm uppercase tracking-[0.35em] text-indigo-400">NFT Mint</p>
             <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Mint your portfolio NFT on Sepolia with one click.
+              Mint your Portfolio NFT on Sepolia with one click.
             </h1>
             <p className="max-w-xl text-lg text-slate-300">
               Connect your wallet, switch to Sepolia, and start minting your collection directly from this app.

@@ -1,31 +1,33 @@
-import { ConnectArea } from "@/components/wallet/ConnectButton";
+import { CollectionInfo } from "@/components/mint/CollectionInfo";
+import { MintSection } from "@/components/mint/MintSection";
+import { ConnectArea } from "@/components/wallet/ConnectArea";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
-      <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-16 lg:px-10">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.35em] text-indigo-400">NFT Mint</p>
-            <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Mint your Portfolio NFT on Sepolia with one click.
-            </h1>
-            <p className="max-w-xl text-lg text-slate-300">
-              Connect your wallet, switch to Sepolia, and start minting your collection directly from this app.
-            </p>
-          </div>
-
-          <div className="card p-6 shadow-2xl shadow-indigo-950/40">
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm text-slate-400">Wallet</p>
-                <h2 className="text-xl font-semibold text-white">Connect to continue</h2>
-              </div>
-              <ConnectArea />
-            </div>
-          </div>
+    <main className="min-h-screen py-12 px-4">
+      <div className="max-w-xl mx-auto space-y-6">
+        <div className="text-center space-y-2">
+          <h1 className="text-4xl font-bold text-white tracking-tight">Portfolio NFT</h1>
+          <p className="text-slate-400">A unique digital collectible built on Ethereum</p>
         </div>
-      </section>
+
+        <ConnectArea />
+        <CollectionInfo />
+        <MintSection />
+
+        <footer className="pt-8 text-center text-sm text-slate-600">
+          <p>By: Absalom Benu | Bukit Digital Nusantara</p>
+          <p>Built with Solidity + Next.js + Wagmi</p>
+          <a
+            href={`https://sepolia.etherscan.io/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 inline-block text-indigo-600 transition-colors hover:text-indigo-500"
+          >
+            View Contract on Etherscan ↗
+          </a>
+        </footer>
+      </div>
     </main>
   );
 }
